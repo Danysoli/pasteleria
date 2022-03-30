@@ -15,5 +15,6 @@ class Torta
         echo '<p>la torta es de color '. $this->color . '</p>';
         echo '<p>la torta tiene '. $this->rellenos . ' rellenos </p>';
         echo '<p>la torta tiene el nombre de '. $this->nombre . '</p>';
+        echo '<hr>';
     }
 }
