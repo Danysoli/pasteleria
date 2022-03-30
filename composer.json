@@ -1,0 +1,19 @@
+{
+    "name": "daniel/pasteleria",
+    "description": "sistema para una pasteleria",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Daniel Soliz",
+            "email": "danysoltri@gmail.com"
+        }
+    ],
+    "require": {}
+}
