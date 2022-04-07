@@ -10,11 +10,11 @@ class Request
 
     public function setController($value)
     {
-        if (empty($value[4])){
+        if (empty($value[1])){
             $this->controller = "home";
         }
         else{
-            $this->controller = $value[4];
+            $this->controller = $value[1];
         } 
     } 
 
@@ -22,17 +22,17 @@ class Request
     {
         $aux = strtolower($this->controller);
         $aux = ucfirst($this->controller);
-        $aux = $aux . 'Controller';
+        $aux = '\App\Http\Controllers\\' . $aux . 'Controller';
         return $aux;
     }
 
     public function setMethod($value)
     {
-        if (empty($value[5          ])){
+        if (empty($value[2])){
             $this->method = "index";
         }
         else{
-            $this->method = $value[5];
+            $this->method = $value[2];
         }  
     } 
 
@@ -52,6 +52,9 @@ class Request
 
     public function send()
     {
-        echo '<p>llamar en el controlador ' . $this->getController() . ' llamar al metodo ' . $this->getMethod() . '</p>';
+        $myController = $this->getController();
+        $myMethod = $this->getMethod();
+
+        call_user_func([new $myController, $myMethod]);
     }
 }
