@@ -55,6 +55,8 @@ class Request
         $myController = $this->getController();
         $myMethod = $this->getMethod();
 
-        call_user_func([new $myController, $myMethod]);
+        $myResponse = call_user_func([new $myController, $myMethod]);
+        
+        $myResponse->send();
     }
 }
